@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--Box-icon-->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!--Google-Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Apple Watch one</title>
+</head>
+<body>
+
+    <!--Cabeçalho-->
+
+    <header>
+        <a href="#" class="logo"><i class='bx bx-stopwatch'></i>Honor</a>
+
+        <ul class="Links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index2.html">Mais</a></li>
+            <li><a href="index3.html">Loja</a></li>
+            <li><a href="index4.html">Contato</a></li>
+        </ul><!--Links-->
+
+        <div class="h-main">
+            <a href="#" class="h-btn">Comprar</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <div class="bx bx-moon" id="darkmode"></div>
+        </div><!--h-main-->
+    </header> 
+    <!--Cabeçalho-->
+
+    
+<footer>
+<p>Todos os direitos reservados SrPonier &copy; <span id="ano"></span></p>
+</footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+let darkmode = document.querySelector ('#darkmode');
+
+darkmode.onclick = () => {
+    if(darkmode.classList.contains('bx-moon')){
+        darkmode.classList.replace ('bx-moon', 'bx-sun');
+        document.body.classList.add ('color');
+    } else{
+        darkmode.classList.replace('bx-sun','bx-moon');
+        document.body.classList.remove('color');
+    }
+};
+
+let menu = document.querySelector('#menu-icon');
+let Links = document.querySelector ('.Links');
+
+menu.onclick = () => {
+    menu.classList.toggle ('bx-x');
+    Links.classList.toggle ('open');
+};
+
+window.onscroll = () => {
+    menu.classList.remove ('bx-x');
+    Links.classList.remove('open');
+};
+
+var anoAtual = new Date().getFullYear();
+  document.getElementById("ano").textContent = anoAtual;
+
+</script>
